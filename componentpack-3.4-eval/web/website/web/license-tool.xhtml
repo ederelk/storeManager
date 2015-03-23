@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+  <body>
+
+    <ui:composition template="/resources/template.xhtml">
+      <ui:param name="title" value="License Tool" />
+      <ui:define name="content">
+        <p>
+          <h:outputText value="There are not a valid License for JComponentPack Server Components" rendered="#{licenseBean.invalidLicense}"/>
+          <ul jsfc="ui:repeat" var="license" value="#{licenseBean.allLicense}">
+            <li>#{license.productName} #{license.productVersion}, #{license.name} is licensed to user: #{license.userName}(#{license.userEmail})<br />
+              <h:outputText value="This license is expired." rendered="#{license.expired}" />
+            </li>
+          </ul>
+        </p>
+        <h:form rendered="#{fn:length(licenseBean.allLicense) > 0}">
+          <h:commandButton action="#{licenseBean.clearLicenseData}" value="Remove All License"  />
+        </h:form>
+        <h:form id="addLicenseForm" prependId="false">
+          <h:messages />
+          <h:panelGrid columns="1">
+            License Data:
+            <h:inputTextarea id="textarea1" rows="12" cols="50" value="#{licenseBean.licenseData}" validator="#{licenseBean.validateLicenseData}" />
+            <h:commandButton id="button1" action="#{licenseBean.addLicense}" value="Add License"  />
+          </h:panelGrid>
+        </h:form>
+
+      </ui:define>
+
+    </ui:composition>
+
+  </body>
+</html>

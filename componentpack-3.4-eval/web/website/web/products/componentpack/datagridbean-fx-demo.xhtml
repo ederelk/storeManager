@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:c="http://java.sun.com/jsp/jstl/core">
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>JDataGridBean Demo for JavaFX</title>
+    </head>
+    <body>
+
+<ui:composition template="/resources/template.xhtml">
+    <ui:param name="title" value="JDataGridBean Demo for JavaFX" />
+    <ui:define name="content">
+
+<h1>JDataGridBean Demo for JavaFX</h1>
+<script src="http://dl.javafx.com/1.2/dtfx.js"></script>
+<script>
+    javafx(
+        {
+              archive: "datagridbean-fx-demo.jar",
+              draggable: true,
+              width: 580,
+              height: 500,
+              code: "com.zfqjava.swing.fx.demo.DataGridBeanFxDemo",
+              name: "datagridbean-fx-demo"
+        }
+    );
+</script>
+
+</ui:define>
+</ui:composition>
+
+</body>
+</html>

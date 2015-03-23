@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>#{title}</title>
+  <h:outputStylesheet name="main.css" target="head"/>
+</h:head>
+
+<h:body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+  <td height="54" background="#{resource['top_03.gif']}">
+      <a href="http://www.zfqjava.com.cn" target="_blank">
+        <img height="54" src="#{resource['top_01.gif']}" border="0" alt="奇新Java控件" />
+      </a>
+  </td>
+</tr>
+</table>
+<div class="wrapbox">
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="${pageContext.servletContext.contextPath}/index.jsp">Overview</a></li>
+            <li><a href="${pageContext.servletContext.contextPath}/datagrid-configuration.jsp">JDataGrid Spreadsheet Configuration</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <ui:insert name="content">
+            内容
+        </ui:insert>
+    </div>
+
+</div>
+<div class="footerbox">
+<hr /> 
+<p>Copyright (C) 2009 <a href="http://www.zfqjava.com.cn" target="_blank">奇新公司-Java控件供应商</a> 版权所有</p>
+</div>
+</h:body>
+</html>

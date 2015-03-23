@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:c="http://java.sun.com/jsp/jstl/core">
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>test - template</title>
+    </head>
+    <body>
+
+<ui:composition template="/resources/template.xhtml">
+    <ui:param name="title" value="JDataGrid Configuration" />
+    <ui:define name="content">
+<h1>JDataGrid Spreadsheet Configuration with Web Components</h1>
+<code>JDataGridApplet</code> provides a standard applet based
+on the JDataGrid component.<br />
+<code>JDataGridBeanApplet</code> provides a standard applet based
+on the JDataGridBean component.<br />
+<code>DataGridServlet</code> is new servet side communication component for JDataGridApplet and JDataGridBeanApplet.
+
+<p />
+<b><a name="applet1">Applet Parameters</a></b><br />
+<p />
+JDataGridApplet and JDataGridBeanApplet configure with the JDataGrid Spreadsheet Web Components DataGridServlet<br />
+will support the following parameters:
+<table border="1">
+  <tr>
+    <th>Parameter Name</th><th>Parameter Type</th><th>Parameter Description</th>
+  </tr>
+  <tr>
+    <td>controlUrl</td><td>url</td><td>The servlet url of the JDataGrid Web Components</td>
+  </tr>
+</table>
+
+ <p />
+
+ <b>Note:</b>
+ <ul>
+ <li>The parameter value "url" can be a completed URI, or a relative or absolute path,
+  if the url starts with "/", it's a absolute path related the current website, if the url
+  don't start with "/", it's a relative path related the current applet page(Applet.getDocumentBase).
+ </li>
+ <li>If you have not specified the saveFormat, it will be the file format of the openUrl file,
+   if you have not specified the saveFileName, it will be the file name of the openUrl file.
+ </li>
+ </ul>
+
+
+
+<p />
+
+<b>Applet Code Example:</b><br />
+JDataGridApplet Example With JDataGrid Spreadsheet Web Components Supported
+<pre>
+&lt;applet id="datagrid" name="datagrid" codebase="."
+  code="com/zfqjava/swing/JDataGridApplet.class"
+  archive="componentpack.jar,lib/jxl.jar,lib/poi-3.2-FINAL-20081019.jar"
+  width=580 height=400&gt;
+    &lt;param name="controlUrl" value="/DataGridServlet"&gt;
+    &lt;param name = "scriptable" value = "true"&gt;
+&lt;/applet&gt;
+</pre>
+JDataGridBeanApplet Example With JDataGrid Spreadsheet Web Components Supported
+<pre>
+&lt;applet id="datagridbean" name="datagridbean" codebase="."
+  code="com/zfqjava/swing/JDataGridBeanApplet.class"
+  archive="componentpack.jar,lib/jxl.jar,lib/poi-3.2-FINAL-20081019.jar"
+  width=580 height=400&gt;
+    &lt;param name="controlUrl" value="/DataGridServlet"&gt;
+    &lt;param name = "scriptable" value = "true"&gt;
+&lt;/applet&gt;
+</pre>
+
+<p />
+<b><a name="datagridservlet">DataGridServlet Configuration:</a></b><br />
+ <code>DataGridServlet</code> is new servet side communication component for JDataGridApplet and JDataGridBeanApplet.
+<p />
+ The <code>DataGridServlet</code> have the following init parameters:
+ <table border="1">
+ <tr>
+   <th>Init parameter name</th><th>Init parameter description</th>
+ </tr>
+ <tr>
+   <td>configFile</td><td>absolute file path to specified this servlet's configuration properties file,<br />
+   the file path should can pass to java.io.File constructor as string parameter.</td>
+ </tr>
+ </table>
+<p />
+Configuration in web.xml:
+<pre>
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;DataGridServlet&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;com.zfqjava.swing.web.DataGridServlet&lt;/servlet-class&gt;
+        &lt;init-param&gt;
+            &lt;param-name&gt;configFile&lt;/param-name&gt;
+            &lt;param-value&gt;D:\datagridservlet-config\datagridservlet_config.properties&lt;/param-value&gt;
+        &lt;/init-param&gt;
+    &lt;/servlet&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;DataGridServlet&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/DataGridServlet&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;DataGridServlet&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/DataGridServlet/*&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+</pre>
+DataGridServlet "configFile" Example:
+<p />
+The files in "configFile" directory "D:\datagridservlet-config\":
+<ul>
+    <li>datagridservlet_config.properties</li>
+    <li>license.txt</li>
+    <li>test.xml</li>
+</ul>
+The contents of file "datagridservlet_config.properties":
+<div class="box"><pre>
+licenseFile=license.txt
+
+openFile=test.xml
+openFormat=xml
+
+saveDir=D:\\temp
+saveFileName=test.xml
+saveFormat=xml
+generateRandomFileName=false
+</pre></div>
+<p />
+
+<h1>JDataGrid Spreadsheet Configuration without Web Components</h1>
+<code>JDataGridApplet</code> provides a standard applet based
+on the JDataGrid component.<br />
+<code>JDataGridBeanApplet</code> provides a standard applet based
+on the JDataGridBean component.<br />
+<code>SaveServlet</code> save the client's input stream to a file on server at the specified directory.
+<p />
+<b><a name="applet2">Applet Parameters</a></b><br />
+
+<p />
+
+JDataGridApplet and JDataGridBeanApplet configure without JDataGrid Spreadsheet Web Components or with the SaveServlet<br />
+will support the following parameters:
+<table border="1">
+  <tr>
+    <th>Parameter Name</th><th>Parameter Type</th><th>Parameter Description</th>
+  </tr>
+  <tr>
+    <td>openUrl</td><td>url</td><td>URL load data into datagrid</td>
+  </tr>
+  <tr>
+    <td>openFormat</td><td>string: one of xls, xml, txt, csv, html, htm, ser</td><td>The file format to open</td>
+  </tr>
+  <tr>
+    <td>saveUrl</td><td>url</td><td>URL save data from datagrid</td>
+  </tr>
+  <tr>
+    <td>saveFormat</td><td>string: one of xls, xml, txt, csv, html, htm, ser</td><td>The file format to save, the default is the file format of the open url</td>
+  </tr>
+  <tr>
+    <td>saveFileName</td><td>string</td><td>The File name to save, the default is the file name of the open url</td>
+  </tr>
+  <tr>
+     <td>generateRandomFileName</td><td>boolean: true or false</td><td>If this parameter is true, it will generate
+   a random file name to save based the "saveFileName" and "saveFormat", the default is true.</td>
+  </tr>
+  <tr>
+    <td>downloadPath</td><td>url</td><td>The path to download the saved file</td>
+  </tr>
+  <tr>
+    <td>licenseUrl</td><td>url</td><td>The path to load the license data</td>
+  </tr>
+ </table>
+
+ <p />
+
+ <b>Note:</b>
+ <ul>
+ <li>The parameter value "url" can be a completed URI, or a relative or absolute path,
+  if the url starts with "/", it's a absolute path related the current website, if the url
+  don't start with "/", it's a relative path related the current applet page(Applet.getDocumentBase).
+ </li>
+ <li>If you have not specified the saveFormat, it will be the file format of the openUrl file,
+   if you have not specified the saveFileName, it will be the file name of the openUrl file.
+ </li>
+ </ul>
+
+
+
+<p />
+
+<b>Applet Code Example:</b><br />
+JDataGridApplet Example Without JDataGrid Spreadsheet Web Components Supported
+<pre>
+&lt;applet id="datagrid" name="datagrid" codebase="."
+  code="com/zfqjava/swing/JDataGridApplet.class"
+  archive="componentpack.jar,lib/jxl.jar,lib/poi-3.2-FINAL-20081019.jar"
+  width=580 height=400&gt;
+    &lt;param name="openUrl" value="applet/test.xml"&gt;
+    &lt;param name="openFormat" value="xml"&gt;
+    &lt;param name="saveUrl" value="${pageContext.servletContext.contextPath}/SaveServlet"&gt;
+    &lt;param name="saveFormat" value="xml"&gt;
+    &lt;param name="downloadPath" value="${pageContext.servletContext.contextPath}/SaveServlet"&gt;
+    &lt;param name="licenseUrl" value="license.txt"&gt;
+    &lt;param name = "scriptable" value = "true"&gt;
+&lt;/applet&gt;
+</pre>
+JDataGridBeanApplet Example Without JDataGrid Spreadsheet Web Components Supported
+<pre>
+&lt;applet id="datagridbean" name="datagridbean" codebase="."
+  code="com/zfqjava/swing/JDataGridBeanApplet.class"
+  archive="componentpack.jar,lib/jxl.jar,lib/poi-3.2-FINAL-20081019.jar"
+  width=580 height=400&gt;
+    &lt;param name="openUrl" value="applet/test.xml"&gt;
+    &lt;param name="openFormat" value="xml"&gt;
+    &lt;param name="saveUrl" value="${pageContext.servletContext.contextPath}/SaveServlet"&gt;
+    &lt;param name="saveFormat" value="xml"&gt;
+    &lt;param name="downloadPath" value="${pageContext.servletContext.contextPath}/SaveServlet"&gt;
+    &lt;param name="licenseUrl" value="license.txt"&gt;
+    &lt;param name = "scriptable" value = "true"&gt;
+&lt;/applet&gt;
+</pre>
+
+<p />
+<b><a name="saveservlet">SaveServlet Configuration:</a></b><br />
+<code>SaveServlet</code> save the client's input stream to a file on server at the specified directory.
+<p />
+ The <code>SaveServlet</code> have the following init parameters:
+ <table border="1">
+ <tr>
+   <th>Init parameter name</th><th>Init parameter description</th>
+ </tr>
+ <tr>
+   <td>saveDir</td><td>absolute file path to specified the directory to save the file,<br />
+   the file path should can pass to java.io.File constructor as string parameter.</td>
+ </tr>
+ </table>
+<p />
+Configuration in web.xml
+<pre>
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;SaveServlet&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;com.zfqjava.swing.web.SaveServlet&lt;/servlet-class&gt;
+        &lt;init-param&gt;
+            &lt;param-name&gt;saveDir&lt;/param-name&gt;
+            &lt;param-value&gt;D:\temp&lt;/param-value&gt;
+        &lt;/init-param&gt;
+    &lt;/servlet&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;SaveServlet&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/SaveServlet&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;SaveServlet&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/SaveServlet/*&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+</pre>
+
+<p />
+<b><a name="javascript">JavaScript and Applet communication</a></b><br />
+<p />
+The JDataGridApplet provide the following functions can be used in JavaScript:
+<table border="1">
+    <tr>
+        <th>function name</th><th>description</th>
+    </tr>
+    <tr>
+        <td>getDataGrid()</td><td>Gets the JDataGrid component.</td>
+    </tr>
+    <tr>
+        <td>doSave()</td><td>Save the data in JDataGrid to web server.</td>
+    </tr>
+    <tr>
+        <td>doDownload()</td><td>Save the data in JDataGrid to web server and <br />open web browser to download the saved file now.</td>
+    </tr>
+</table>
+<br />
+The JDataGridBeanApplet provide the following functions can be used in JavaScript:
+<table border="1">
+    <tr>
+        <th>function name</th><th>description</th>
+    </tr>
+    <tr>
+        <td>getDataGrid()</td><td>Gets the JDataGrid component.</td>
+    </tr>
+    <tr>
+        <td>getDataGridBean()</td><td>Gets the JDataGridBean component.</td>
+    </tr>
+    <tr>
+        <td>doSave()</td><td>Save the data in JDataGrid to web server.</td>
+    </tr>
+    <tr>
+        <td>doDownload()</td><td>Save the data in JDataGrid to web server and <br />open web browser to download the saved file now.</td>
+    </tr>
+</table>
+
+</ui:define>
+</ui:composition>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+  <body>
+
+    <ui:composition template="/resources/template.xhtml">
+      <ui:param name="title" value="Contact Us" />
+      <ui:define name="content">
+  <script language="JavaScript" type="text/javascript">
+   <!--
+   function checkForm() {
+    if(!fn_CheckRequired(contactform.realname,'Name')) {
+     return false;
+    }
+    if(!fn_CheckRequired(contactform.email,'Email')) {
+     return false;
+    }
+    if(!fn_CheckEmail(contactform.email, contactform.email.value)) {
+     return false;
+    }
+    return true;
+   }
+   -->
+  </script>
+        <p><strong>Contact us and Get a free evaluation license right now!</strong></p>
+        Please fill in your true name and email, so that we can contact with you via the email as soon as possible.
+        <form name="contactform" method="post" action="http://www.zfqjava.com/cgi-sys/FormMail.cgi" onSubmit="return checkForm()">
+          <table>
+            <tr>
+              <td>Name:</td><td><input type="text" name="realname" size="59" style="width:420px" /></td>
+            </tr>
+            <tr>
+              <td>Email:</td><td><input type="text" name="email" size="59" style="width:420px" /></td>
+            </tr>
+            <tr>
+              <td>Subject:</td><td>
+                <select name="subject" style="width:424px">
+                  <option>Get a Free 15 Days Evaluation License</option>
+                  <option>Need Technical Supports</option>
+                  <option>Purchase Problem</option>
+                  <option>Bug Reports</option>
+                  <option>Suggestions</option>
+                  <option>Others</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Information:</td><td><textarea cols="46" rows="10" name="content" style="width:420px"></textarea></td>
+            </tr>
+            <tr>
+              <td></td><td><input type="submit" value="Submit" />
+                &nbsp;&nbsp;<a href="http://www.zfqjava.com/privacy.html" target="_blank">We value your privacy</a>
+              </td>
+            </tr>
+          </table>
+          <input type="hidden" name="recipient" value="support@zfqjava.com" />
+          <input type="hidden" name="redirect" value="http://www.zfqjava.com/contactfinish.html" />
+        </form>
+
+        <p>Please send any questions, suggestions, comments and other problems
+          to us at following address.</p>
+        <blockquote>
+          <p><a href="mailto:support@zfqjava.com?subject=JComponentPack 3.1, Need Technical Supports">support@zfqjava.com</a>
+          </p>
+        </blockquote>
+
+        <blockquote>
+          <p>For more information, please visit our web site:
+            <a href="http://www.zfqjava.com" target="_blank">http://www.zfqjava.com    </a></p>
+        </blockquote>
+
+      </ui:define>
+
+    </ui:composition>
+
+  </body>
+</html>

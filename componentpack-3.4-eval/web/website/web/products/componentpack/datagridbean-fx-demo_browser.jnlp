@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" codebase="$$codebase" href="datagridbean-fx-demo_browser.jnlp">
+    <information>
+        <title>datagridbean-fx-demo</title>
+        <vendor>Extreme Component, Inc.</vendor>
+        <homepage href="http://www.zfqjava.com"/>
+        <description>datagridbean-fx-demo</description>
+        <offline-allowed/>
+        <shortcut>
+            <desktop/>
+        </shortcut>
+    </information>
+    <resources>
+        <j2se version="1.5+"/>
+        <extension name="JavaFX Runtime" href="http://dl.javafx.com/1.2/javafx-rt.jnlp"/>
+        <jar href="lib/componentpack-fx-demo.jar" main="true"/>
+        <jar href="lib/componentpack-fx.jar"/>
+        <jar href="lib/componentpack.jar"/>
+        <jar href="lib/license.jar"/>
+        <jar href="lib/jxl.jar" />
+        <jar href="lib/poi-3.2-FINAL-20081019.jar"  />
+        <jar href="lib/itext-2.0.2.jar" />
+    </resources>
+    <applet-desc name="datagridbean-fx-demo" main-class="com.sun.javafx.runtime.adapter.Applet" width="580" height="500">
+        <param name="MainJavaFXScript" value="com.zfqjava.swing.fx.demo.DataGridBeanFxDemo">
+    </applet-desc>
+</jnlp>

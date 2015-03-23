@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - $Id: demo.jnlp,v 1.6 2003/04/11 08:43:42 zfq Exp $
+  - A simple jnle template file.
+  -->
+<jnlp spec="1.0" codebase="$$codebase" href="datagridbean.jnlp">
+  <information>
+    <title>JDataGridBean</title>
+    <vendor>Extreme Component, Inc.</vendor>
+    <homepage href="http://www.zfqjava.com" />
+    <description>JDataGridBean application</description>
+    <description kind="short">JDataGridBean application</description>
+    <icon href="icon/JDataGridColor32.gif"/>
+    <offline-allowed />
+  </information>
+  <security>
+    <all-permissions />
+  </security>
+  <resources>
+    <j2se version="1.5+" />
+    <jar href="lib/componentpack-demo.jar" main="true" download="eager" />
+    <jar href="lib/componentpack.jar" download="eager" />
+    <jar href="lib/license.jar" download="eager" />
+    <jar href="lib/jxl.jar" />
+    <jar href="lib/poi-3.2-FINAL-20081019.jar"  />
+    <jar href="lib/itext-2.0.2.jar" />
+  </resources>
+  <application-desc main-class="com.zfqjava.swing.JDataGridBean" />
+</jnlp>

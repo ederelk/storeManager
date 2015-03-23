@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:c="http://java.sun.com/jsp/jstl/core">
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>test - template</title>
+    </head>
+    <body>
+
+<ui:composition template="/resources/template.xhtml">
+    <ui:param name="title" value="JDataGrid Applet Demo" />
+    <ui:define name="content">
+
+<h1>JDataTableBean Applet Demo with Web Components</h1>
+<p>
+<applet id="datatablebean" name="datatablebean" codebase="." code="com/zfqjava/swing/JDataTableBeanApplet.class" archive="lib/componentpack.jar, lib/derbyclient.jar" width="580" height="400">
+    <param name="controlUrl" value="#{facesContext.externalContext.requestContextPath}/DataTableServlet" />
+    <param name = "scriptable" value = "true" />
+</applet>
+</p>
+<input value="Previous Page" type="button" onclick="datatablebean.doPreviousPage();" />
+<input value="Next Page" type="button" onclick="datatablebean.doNextPage();" />
+<input value="Accept Changes" type="button" onclick="datatablebean.doAcceptChanges();" />
+
+</ui:define>
+</ui:composition>
+
+</body>
+</html>

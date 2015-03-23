@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:c="http://java.sun.com/jsp/jstl/core">
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>test - template</title>
+    </head>
+    <body>
+
+<ui:composition template="/resources/template.xhtml">
+    <ui:param name="title" value="JDataGrid Applet Demo with Web Components" />
+    <ui:define name="content">
+
+
+<h1>JDataGrid Applet Demo with Web Components</h1>
+<p>
+<applet id="datagrid" name="datagrid" codebase="." code="com/zfqjava/swing/JDataGridApplet.class" archive="lib/componentpack.jar,lib/license.jar,lib/jxl.jar,lib/poi-3.2-FINAL-20081019.jar,lib/itext-2.0.2.jar" width="580" height="400">
+    <param name="controlUrl" value="#{facesContext.externalContext.requestContextPath}/DataGridServlet" />
+    <param name = "scriptable" value = "true" />
+</applet>
+</p>
+<input value="Save and Download" type="button" onclick="datagrid.doDownload();" />
+
+</ui:define>
+</ui:composition>
+
+</body>
+</html>
