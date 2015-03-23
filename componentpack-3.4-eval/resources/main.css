@@ -1,0 +1,23 @@
+body{margin:0; padding:0}
+body,td,th {font-size: 12px;}
+.wrapbox{padding:5px 10px;}
+.footerbox{padding:0 0 8px;text-align:center;clear:both}
+.footerbox *{padding:0;margin:0;}
+.sidebar{float:left; width:220px;}
+.content{margin-left:10px; float:left;width:750px}
+.STYLE1 {color: #FF0000;font-weight: bold;}
+.STYLE2 {color: #339900}
+.STYLE4 {color: #339900; font-weight: bold; }
+.box{margin-left:12px;}
+
+h1{font-size: 14px}
+ul {margin-top: 0px; margin-left: 1em!important; padding-top: 0px; padding-left: 1em!important;}
+
+.fun_list li{list-style-position: outside;list-style-type: disc;line-height:21px;font-family:"Courier New", Courier}
+.fun_list p {margin:0}
+
+.green {color:green;font-weight:bold;margin-left:2em}
+.red {color:red;font-weight:bold;margin-left:2em}
+
+.fun_list2 li{list-style-position: outside;list-style-type: decimal;line-height:21px;font-family:"Courier New", Courier}
+.fun_list2 p {margin:0}
