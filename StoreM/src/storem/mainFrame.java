@@ -52,11 +52,18 @@ URL url = getClass().getResource("icons/Untitled-3.jpg");
         setIconImage(new ImageIcon(url).getImage());
         setTitle("Store Manager");
         //setIconImage(getIconImage());
-        LookAndFeel mylook =  new WindowsLookAndFeel();
+        
+        
        // LookAndFeel look2 = new NimbusLookAndFeel();
        
+        
         try{
-           UIManager.setLookAndFeel(mylook); 
+            
+            if(System.getProperty("os.name").contains("Windows")){
+                LookAndFeel mylook =  new WindowsLookAndFeel();
+                UIManager.setLookAndFeel(mylook); 
+            }
+           
            
          SwingUtilities.updateComponentTreeUI( this );
          

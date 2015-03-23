@@ -43,6 +43,8 @@ Temporary Items
 .apdisk
 
 StoreM/build.xml
-StoreM/build
-StoreM/dist
-StoreM/nbproject
+StoreM/build/
+StoreM/dist/
+StoreM/nbproject/
+
+StoreM/build/classes/storem/mainFrame.class
