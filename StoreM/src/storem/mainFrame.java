@@ -64,10 +64,8 @@ URL url = getClass().getResource("icons/Untitled-3.jpg");
                 UIManager.setLookAndFeel(mylook); 
             }
            
-           
          SwingUtilities.updateComponentTreeUI( this );
          
-
         }catch ( UnsupportedLookAndFeelException exception )
          {
              JOptionPane.showMessageDialog(null,exception);
