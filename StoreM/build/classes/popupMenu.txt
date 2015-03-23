@@ -1,0 +1,12 @@
+
+/*     
+       // myPopupMenu.setComponentZOrder(label, 0);
+       label.setBackground(Color.white);
+       myPopupMenu.setBackground(Color.white);
+        myPopupMenu.add(label);
+        //myPopupMenu.add(new JButton("shitkkkkkkkkkkk"));
+        myPopupMenu.show(this, search.getX(), search.getY()+25);
+      
+        //search.add(myPopupMenu);
+         
+         * /
