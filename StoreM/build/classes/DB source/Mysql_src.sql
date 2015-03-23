@@ -5,8 +5,9 @@ USE generic_store $$
 
 CREATE TABLE `customers` (
   `id` bigint(11) NOT NULL AUTO_INCREMENT,
-  `customer_name` varchar(60) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `customer_name` varchar(60) DEFAULT NULL ,
+  PRIMARY KEY (`id`),
+  UNIQUE(`customer_name`)
 ) $$
 
 CREATE TABLE `employees` (
@@ -39,6 +40,7 @@ CREATE TABLE `sales` (
    `date` timestamp not null default CURRENT_TIMESTAMP,
    `credit_sales` varchar(10) not null,
    `reimbursement_status` varchar(60) not null,
+   `paid_status` tinyint(1) not null,
    PRIMARY KEY (`id`)
 ) $$
 

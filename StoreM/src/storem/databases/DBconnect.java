@@ -17,7 +17,8 @@ public class DBconnect  {
     static final String DATABASE_URL = "jdbc:mysql://localhost/generic_store";
     static final String DATABASE_NAME = "generic_store";
     static final String USERNAME = "root";
-    static final String PASSWORD = "root";
+    static final String PASSWORD = "";
+   // static final String PASSWORD = "root";
     public static String dbConnectedName;
     private static String username, password;
     public static  ResultSetMetaData metaData;
